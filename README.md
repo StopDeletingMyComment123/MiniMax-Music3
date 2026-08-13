@@ -101,11 +101,7 @@ hf download MiniMaxAI/MiniMax-Music3 --local-dir /path/to/minimax_ttm
 MiniMax Music 3 is currently supported by [SGLang-Omni](https://github.com/sgl-project/sglang-omni). From the SGLang-Omni repository root, run:
 
 ```bash
-python -m sglang_omni.cli serve \
-  --config examples/configs/minimax_ttm.yaml \
-  --model-path /path/to/minimax_ttm \
-  --host 127.0.0.1 \
-  --port 8000
+sgl-omni serve --model-path MiniMaxAI/MiniMax-Music3 --port 8000
 ```
 
 Inference uses two CUDA GPUs:
