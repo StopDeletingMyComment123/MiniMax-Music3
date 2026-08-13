@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="60%" src="figures/logo.svg" alt="MiniMax">
+  <img width="60%" src="figures/Music3.png" alt="MiniMax">
 </div>
 <p align="center">
   <a href="https://agent.minimax.io/" target="_blank"><img src="https://img.shields.io/badge/MiniMax%20Agent-FF6C37?logo=minimax&logoColor=white" alt="MiniMax Agent"></a>
