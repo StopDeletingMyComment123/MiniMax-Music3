@@ -4,6 +4,7 @@
 <p align="center">
   <a href="https://agent.minimax.io/" target="_blank"><img src="https://img.shields.io/badge/MiniMax%20Agent-FF6C37?logo=minimax&logoColor=white" alt="MiniMax Agent"></a>
   <a href="https://platform.minimax.io/docs/guides/text-generation" target="_blank"><img src="https://img.shields.io/badge/API-FF6C37?logo=minimax&logoColor=white" alt="API"></a>
+  <a href="https://minimax-ai.github.io/music3-demo/" target="_blank"><img src="https://img.shields.io/badge/Live%20Demo-FF6C37?logo=githubpages&logoColor=white" alt="MiniMax Music 3 Live Demo"></a>
   <a href="https://www.minimax.io" target="_blank"><img src="https://img.shields.io/badge/MiniMax%20Website-FF6C37?logo=minimax&logoColor=white" alt="MiniMax Website"></a>
   <br>
   <a href="https://modelscope.cn/organization/minimax" target="_blank" rel="noopener noreferrer"><img alt="ModelScope MiniMax AI" src="https://img.shields.io/badge/ModelScope-MiniMax%20AI-white?labelColor=%23EF3D5D"></a>
@@ -20,8 +21,12 @@
 
 MiniMax Music 3 combines an **8B Global LLM** for long-range musical structure, a **0.6B Local LLM** for frame-level acoustic detail, and a continuous hidden-state synthesis system based on **Flow Matching** and **Flow-VAE**. The model produces 32 kHz, 16-bit stereo WAV audio.
 
+## Demo
+
+Explore music generation examples on the [MiniMax Music 3 Demo](https://minimax-ai.github.io/music3-demo/).
+
 <p align="center">
-  <img width="100%" src="figures/music3.0-Architecture-Diagram.png">
+  <img width="100%" src="figures/music3.0-Architecture-Diagram.png" alt="MiniMax Music 3 architecture diagram">
 </p>
 
 ## Complete Songs with Long-Range Coherence
@@ -131,7 +136,17 @@ An example generated with this checkpoint is available at [`assets/minimax_ttm.w
 
 ## Prompt Enhancement
 
-A concise natural-language description can be used directly. For more detailed control, it can be expanded into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. Musical instructions attached to lyric section tags should be preserved in the arrangement description, while the lyric text itself remains in the lyrics input.
+A concise natural-language description can be used directly. For richer prompts and more precise control, use the provided [`music-caption-rewriter`](skills/music-caption-rewriter/SKILL.md) skill to expand it into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. The skill preserves musical instructions attached to lyric section tags in the arrangement description while keeping the lyric text in the lyrics input.
+
+```bash
+npx skills add MiniMax-AI/MiniMax-Music3 --skill music-caption-rewriter
+```
+
+### Music Caption Rewriter Skill
+
+This repository includes `music-caption-rewriter`, an agent skill that turns a brief music description and optional tagged lyrics into a detailed Music 3.0 Structured Caption. It uses a bundled text library to select compatible style references, combine requested influences, and build a coherent section-by-section arrangement without external APIs or runtime dependencies.
+
+Then invoke `$music-caption-rewriter` in a supported coding agent with a music description and, optionally, lyrics containing section tags such as `[Verse]` or `[Chorus]`. The skill returns `Global Metadata`, `Vocal Details`, and `Arrangement` while preserving explicit musical constraints and keeping lyric text out of the rewritten caption.
 
 ## Limitations
 
