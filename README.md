@@ -136,7 +136,7 @@ An example generated with this checkpoint is available at [`assets/minimax_ttm.w
 
 ## Prompt Enhancement
 
-A concise natural-language description can be used directly. For richer prompts and more precise control, use the provided [`music-caption-rewriter`](skills/music-caption-rewriter/SKILL.md) skill to expand it into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. The skill preserves musical instructions attached to lyric section tags in the arrangement description while keeping the lyric text in the lyrics input.
+A concise natural-language description can be used directly. For richer prompts and more precise control, use the provided [`music-caption-rewriter`](skills/music-caption-rewriter/SKILL.md) skill to expand it into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. The skill preserves musical instructions attached to lyric section tags in the arrangement description while keeping the lyric text in the lyrics input. See the [skills page](skills/README.md) for installation instructions and a full feature overview.
 
 ```bash
 npx skills add MiniMax-AI/MiniMax-Music3 --skill music-caption-rewriter
