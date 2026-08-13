@@ -1,13 +1,3 @@
----
-library_name: sglang-omni
-pipeline_tag: text-to-audio
-tags:
-  - music-generation
-  - text-to-music
-  - pytorch
-  - sglang-omni
----
-
 <div align="center">
   <img width="60%" src="figures/logo.svg" alt="MiniMax">
 </div>
