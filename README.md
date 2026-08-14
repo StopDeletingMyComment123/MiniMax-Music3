@@ -21,6 +21,14 @@
 
 MiniMax Music 3 combines an **8B Global LLM** for long-range musical structure, a **0.6B Local LLM** for frame-level acoustic detail, and a continuous hidden-state synthesis system based on **Flow Matching** and **Flow-VAE**. The model produces 32 kHz, 16-bit stereo WAV audio.
 
+## Prompt Enhancement
+
+A concise natural-language description can be used directly. For richer prompts and more precise control, use the provided [`music-caption-rewriter`](skills/music-caption-rewriter/SKILL.md) skill to expand it into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. The skill preserves musical instructions attached to lyric section tags in the arrangement description while keeping the lyric text in the lyrics input. See the [skills page](skills/README.md) for installation instructions and a full feature overview.
+
+```bash
+npx skills add MiniMax-AI/MiniMax-Music3 --skill music-caption-rewriter
+```
+
 ## Demo
 
 Explore music generation examples on the [MiniMax Music 3 Demo](https://minimax-ai.github.io/music3-demo/).
@@ -129,14 +137,6 @@ curl http://127.0.0.1:8000/v1/audio/speech \
 ```
 
 An example generated with this checkpoint is available at [`assets/minimax_ttm.wav`](assets/minimax_ttm.wav).
-
-## Prompt Enhancement
-
-A concise natural-language description can be used directly. For richer prompts and more precise control, use the provided [`music-caption-rewriter`](skills/music-caption-rewriter/SKILL.md) skill to expand it into a Structured Caption containing `Global Metadata`, `Vocal Details`, and `Arrangement`. The skill preserves musical instructions attached to lyric section tags in the arrangement description while keeping the lyric text in the lyrics input. See the [skills page](skills/README.md) for installation instructions and a full feature overview.
-
-```bash
-npx skills add MiniMax-AI/MiniMax-Music3 --skill music-caption-rewriter
-```
 
 ### Music Caption Rewriter Skill
 
